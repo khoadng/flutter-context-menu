@@ -21,7 +21,8 @@ class GenericContextMenu extends StatefulWidget {
   _GenericContextMenuState createState() => _GenericContextMenuState();
 }
 
-class _GenericContextMenuState extends State<GenericContextMenu> with ContextMenuStateMixin {
+class _GenericContextMenuState extends State<GenericContextMenu>
+    with ContextMenuStateMixin {
   @override
   Widget build(BuildContext context) {
     // Guard against an empty list
@@ -58,6 +59,7 @@ class _GenericContextMenuState extends State<GenericContextMenu> with ContextMen
                 iconHover: config.iconHover,
                 shortcutLabel: config.shortcutLabel,
                 onPressed: action,
+                labelStyle: config.labelStyle,
               ),
               widget.buttonStyle);
         },
