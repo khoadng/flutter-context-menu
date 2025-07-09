@@ -143,6 +143,7 @@ class ContextMenuOverlayState extends State<ContextMenuOverlay> {
       // take 1 frame
       _menuSize = Size.zero;
       _currentMenu = child;
+      HapticFeedback.lightImpact();
     });
   }
 
