@@ -18,7 +18,7 @@ class ContextMenuOverlay extends StatefulWidget {
     this.buttonBuilder,
     this.dividerBuilder,
     this.buttonStyle = const ContextMenuButtonStyle(),
-    this.hapticFeedbackOnStart,
+    this.hapticFeedbackOnStart = true,
     super.key,
   });
 
