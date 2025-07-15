@@ -18,10 +18,14 @@ class ContextMenuOverlay extends StatefulWidget {
     this.buttonBuilder,
     this.dividerBuilder,
     this.buttonStyle = const ContextMenuButtonStyle(),
+    this.hapticFeedbackOnStart,
     super.key,
   });
 
   final Widget child;
+
+  /// Whether haptic feedback should be triggered on drag start.
+  final bool hapticFeedbackOnStart;
 
   /// Builds a card that wraps all the buttons in the menu.
   final ContextMenuCardBuilder? cardBuilder;
@@ -144,7 +148,9 @@ class ContextMenuOverlayState extends State<ContextMenuOverlay> {
       // take 1 frame
       _menuSize = Size.zero;
       _currentMenu = child;
-      HapticFeedback.lightImpact();
+      if (hapticFeedbackOnStart) {
+        HapticFeedback.lightImpact();
+      }
     });
   }
 
